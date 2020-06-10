@@ -1,3 +1,5 @@
 #gitignore file -> mention name of all the files not to be commited or tracked.
 __init__.pyc
-
+*.pyc
+.mypy_cache
+FLASK_BASIC/data/data.csv
