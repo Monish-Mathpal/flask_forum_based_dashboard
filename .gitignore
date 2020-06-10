@@ -1,0 +1,3 @@
+#gitignore file -> mention name of all the files not to be commited or tracked.
+__init__.pyc
+
