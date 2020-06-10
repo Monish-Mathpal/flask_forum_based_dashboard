@@ -18,4 +18,4 @@ login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 
-from flaskblog.view import routes
+from forum_based_analytic_dboard_app.view import routes
