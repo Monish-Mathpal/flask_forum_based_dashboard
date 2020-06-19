@@ -2,8 +2,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-path = "/home/monish/flask_forum_based_dashboard/flask_based_application_project/forum_based_analytic_dboard_app/site.db"
-SQLALCHEMY_DATABASE_URL = "sqlite:////"+path
+# path = "./../forum_based_analytic_dboard_app/db/site.db"
+SQLALCHEMY_DATABASE_URL = "sqlite:///forum_based_analytic_dboard_app/db/site.db"
 
 # SQLALCHEMY_DATABASE_URL = "sqlite:///site.db"
 # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
