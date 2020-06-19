@@ -1,15 +1,78 @@
-{% extends "layout.html" %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% block header %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <!-- <h1 style="text-align: center">ABC Company Information Portal</h1> -->
 
 
-  <div class="navbar-nav mr-auto">
-    <a class="navbar-brand nav-item nav-link" href="{{url_for('home')}}">Home</a>
-    <a class="navbar-brand nav-item nav-link" href="{{url_for('about')}}">About</a>
-    
-    <a class="navbar-brand nav-item nav-link" 
-    href="{{url_for('fill_company_questionaire')}}">Company Research Form</a>
-    
-  </div>
+<div class="container-sm" style="margin-right:7.5rem;">
+    <nav class="navbar navbar-light" style="padding:1rem; width:71.4rem;
+padding-left:20rem; background-color: #FF5733">
+      <!-- Navbar content -->
+      <a class="navbar-brand" style="margin-left:-19rem;" href="#">HOME</a>
+      <a class="navbar-brand" style="margin-left:-19rem;" href="{{url_for('search')}}">Search Reports</a>
+      <a class="navbar-brand" style="margin-left:-19rem;" href="#">LATEST NEWS</a>
+      <a class="navbar-brand" style="margin-left:-19rem;" href="#">RESEARCH</a>
+      <a class="navbar-brand" style="margin-left:-19rem;" href="#">INFOGRAPHICS</a>
+      
+      <a class="nav-link active" style="background-color:white;" href="{{url_for('logout')}}">Logout</a>
+    </nav>
+</div>
+    <div class="container-sm">
 
-{% endblock %}
+      <div class="row justify-content-md-center">
+        <!-- column 1 for stats-->
+        <div class="col border">
+          <div class="card" style="width: 29rem; height: 15rem; margin-auto; margin-top: 45px; margin-bottom: 70px">
+              <div class="card-body" style="background-color:#ffa700">
+                  <h5 class="card-title">Card title</h5>
+
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+
+            <div class="card" style="width: 29rem; height: 15rem; margin-auto; margin-top: 45px; margin-bottom: 70px">
+                <div class="card-body" style="background-color:#ffa700">
+                    <h5 class="card-title">Card title</h5>
+
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+
+              <div class="card" style="width: 29rem; height: 15rem; margin-auto; margin-top: 45px; margin-bottom: 70px">
+                  <div class="card-body" style="background-color:#ffa700">
+                      <h5 class="card-title">Card title</h5>
+
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+
+        </div>
+
+        <div class="col border">
+
+          <div class="card" style="width: 26rem; height: 30rem; margin-top: 40px; margin-bottom: 10px;
+          margin-left: 50px; background-color: #FF7979;">
+              <div class="card-body"  style="text-align:center">
+                  <h5 class="card-title">POST</h5>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
