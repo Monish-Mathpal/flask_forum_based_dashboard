@@ -6,6 +6,9 @@ from flask_restful import(Api, Resource, fields, marshal, reqparse)
 from flask import Flask, jsonify, url_for, abort
 from flask_migrate import Migrate
 from .views.reports import reports
+
+
+
 from flask import Flask, session
 from datetime import timedelta
 app = Flask(__name__)
@@ -39,4 +42,7 @@ def before_request():
     app.permanent_session_lifetime = timedelta(minutes=5)
 
 from .views import routes, reports
+from .views.posts import posts
 from .models import models
+
+app.register_blueprint(posts)

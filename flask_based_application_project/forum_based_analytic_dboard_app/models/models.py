@@ -11,6 +11,7 @@ class User(UserMixin, db.Model):
     email_id = db.Column(db.String(20), unique=True, nullable=False)
     password_hash = db.Column(db.String(128))
     companies = db.relationship('Company', backref='researcher', lazy='dynamic')
+    posts = db.relationship('Post', backref='author', lazy=True)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -36,3 +37,13 @@ class Company(db.Model):
     def __repr__(self):
         return f"Company('{self.id}', '{self.name}', '{self.websites}','{self.desc}')"
 
+
+class Post(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    content = db.Column(db.Text, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+    def __repr__(self):
+        return f"Post('{self.title}', '{self.date_posted}')"

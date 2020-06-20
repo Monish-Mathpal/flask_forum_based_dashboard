@@ -12,7 +12,7 @@ reports = Blueprint('reports', __name__)
 def show_report(id):
     url = f"http://127.0.0.1:8000/users/{id}"
     data = requests.get(url)
-    print(id)   
+    print(data.json())
     return render_template('company_info.html', data=data.json())
 
 

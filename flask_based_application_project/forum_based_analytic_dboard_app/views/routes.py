@@ -1,7 +1,7 @@
 from flask import render_template, url_for, flash, redirect, request
 from forum_based_analytic_dboard_app import app, db, bcrypt
 from .forms import LoginForm, RegistrationForm
-from forum_based_analytic_dboard_app.models.models import Company, User
+from forum_based_analytic_dboard_app.models.models import Company, User, Post
 from werkzeug.utils import secure_filename
 from flask import send_from_directory
 import os
@@ -21,10 +21,8 @@ def login():
     
     form = LoginForm()
     if form.validate_on_submit():
-        print("hello")
+        # print("hello")
         user = User.query.filter_by(username=form.username.data).first()
-        
-        
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
             return redirect(url_for('login'))
@@ -48,7 +46,7 @@ def register():
         return redirect(url_for('home'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        print(form.username.data)
+        # print(form.username.data)
         # form.validate_username(form.username.data)
         
         user = User(username=form.username.data, email_id=form.email.data)
@@ -63,7 +61,9 @@ def register():
 @app.route("/home", methods=['GET'])
 @login_required
 def home():
-    return render_template('home.html')
+    posts = Post.query.order_by(Post.date_posted.desc()).all()
+    # print(posts.items)
+    return render_template('home.html', posts=posts)
 
 
 
